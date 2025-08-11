@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Workshop Tutorials – 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- keep if you have shared styles; safe to remove if not used -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <style>
+    :root{
+      --bg:#f7fbf7; --panel:#ffffff; --card:#ffffff;
+      --txt:#132b17; --muted:#53725a;
+      --brand1:#43a047; --brand2:#66bb6a; --accent:#2e7d32;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+      scroll-behavior:smooth;
+    }
+
+    /* Top nav (anchors only now) */
+    nav{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;
+      padding:1rem 1.25rem;background:rgba(255,255,255,.9);
+      backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid #e2efe4}
+    nav .logo{color:#0f3c1f;text-decoration:none;font-weight:700;letter-spacing:.3px}
+    nav .nav-links{display:flex;gap:.75rem;align-items:center}
+    nav .nav-links a{color:var(--muted);text-decoration:none;padding:.5rem .75rem;border-radius:.5rem}
+    nav .nav-links a:hover{background:#eaf6ed;color:#0f3c1f}
+
+    /* Header */
+    header{padding:4.5rem 1.25rem 2rem; text-align:center;
+      background:linear-gradient(180deg,#eef7f1 0%, #ffffff 58%);
+      border-bottom:1px solid #e2efe4}
+    header h1{margin:0 0 .75rem;font-size:clamp(1.75rem,3.5vw,2.5rem);color:#0f3c1f}
+    header p{margin:0 auto 1.25rem;max-width:760px;color:var(--muted)}
+
+    /* Utilities */
+    .container{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+    .grid{display:grid;gap:1rem}
+    @media (min-width: 900px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+    @media (min-width: 700px){.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
+
+    /* Button */
+    .portal-btn{background:linear-gradient(135deg, var(--brand1) 0%, var(--brand2) 100%);
+      border:none;border-radius:999px;color:#fff;font-size:1rem;font-weight:600;
+      padding:.85rem 1.4rem;cursor:pointer;box-shadow:0 8px 20px rgba(67,160,71,.35);
+      transition:transform .2s, box-shadow .2s, background-position .3s;background-size:200% 200%;
+      display:inline-flex;align-items:center;gap:.6rem}
+    .portal-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(67,160,71,.45);background-position:100% 0}
+    .portal-btn:active{transform:translateY(-1px)}
+
+    /* Sections */
+    section{padding:2.25rem 0;border-bottom:1px solid #e2efe4}
+    section h2{margin:.25rem 0 1rem;font-size:clamp(1.25rem, 2.6vw, 1.75rem)}
+    section .lead{color:var(--muted);max-width:900px}
+
+    /* Cards */
+    .card{background:var(--card);border:1px solid #e6f2e8;border-radius:1rem;padding:1rem}
+    .card h3{margin:.25rem 0 .5rem;font-size:1.05rem}
+    .card p{margin:.25rem 0;color:var(--muted)}
+    .card a{color:#2e7d32;text-decoration:none}
+    .card a:hover{text-decoration:underline}
+
+    /* Day anchors */
+    .day-nav{margin:1.5rem 0 0;display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center}
+    .tag{display:inline-block;border:1px solid #cfe8d2;padding:.45rem .7rem;border-radius:.75rem;color:#2e7d32;text-decoration:none;background:#ffffff}
+    .tag:hover{border-color:#a9d9b1;background:#eaf6ed;color:#1b5e20}
+
+    /* Media */
+    figure{margin:1rem 0;border:1px solid #e6f2e8;border-radius:.75rem;overflow:hidden;background:var(--panel)}
+    figure img{display:block;width:100%;height:auto}
+    figure figcaption{padding:.65rem .8rem;color:var(--muted);font-size:.9rem;border-top:1px solid #e6f2e8}
+
+    footer{padding:2.5rem 1.25rem;color:var(--muted);text-align:center}
+
+    /* --- Lock/blur utility for Day 2 & 3 --- */
+    .locked { filter: blur(6px); opacity:.85; pointer-events:none; user-select:none; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#top" class="logo">Workshop 2025</a>
+    <div class="nav-links">
+      <a href="#resources">Resources</a>
+      <a href="#day1">Day 1</a>
+      <a href="#day2">Day 2</a>
+      <a href="#day3">Day 3</a>
+    </div>
+  </nav>
+
+  <header id="top">
+    <h1>Workshop Tutorials</h1>
+    <p>Hands-on guides for getting productive in ArcGIS Online—start with useful resources, then follow the daily paths below.</p>
+    <div class="day-nav" aria-label="Jump to day">
+      <a class="tag" href="#day1">Day 1</a>
+      <a class="tag" href="#day2">Day 2</a>
+      <a class="tag" href="#day3">Day 3</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Useful Resources -->
+    <section id="resources">
+      <h2>Useful Resources</h2>
+      <p class="lead">Start here when you need reference layers or examples. The <strong>LLBO Data Resource Manager (DRM)</strong> hosts ready-to-use maps and layers curated by the team.</p>
+
+      <div class="grid cols-2">
+        <article class="card">
+          <h3>LLBO DRM – ArcGIS content</h3>
+          <p>Browse layers, maps, and apps published by the LLBO DRM account.</p>
+          <p>
+            <a class="portal-btn" href="https://maps.arcgis.com/home/search.html?restrict=false&sortField=relevance&sortOrder=desc&searchTerm=owner%3A%22LLBODRMGIS%22#content" target="_blank" rel="noopener">Open LLBO DRM</a>
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>ArcGIS Online Help</h3>
+          <p>Official docs for Map Viewer, layer styles, data management, and more.</p>
+          <p><a href="https://doc.arcgis.com/en/arcgis-online/" target="_blank" rel="noopener">Go to documentation →</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Day 1 -->
+    <section id="day1">
+      <h2>Day 1: Base Maps, Creating a Map, Symbology, & Pulling in Data</h2>
+      <p class="lead">Learn the Map Viewer, pick a basemap (OpenStreetMap is a great neutral base), symbolize layers, and add external data.</p>
+
+      <div class="grid cols-2">
+        <article class="card">
+          <h3>1) Create your first web map</h3>
+          <ol>
+            <li>In ArcGIS Online, click <em>Map</em> to open Map Viewer.</li>
+            <li>Choose <em>Basemap</em> → <strong>OpenStreetMap</strong>.</li>
+            <li>Zoom to your area of interest and save the map.</li>
+          </ol>
+        </article>
+        
+        <article class="card">
+          <h3>2) Symbolize a layer</h3>
+          <ol>
+            <li>Add a layer (search the <strong>LLBO DRM</strong> or drag a file).</li>
+            <li>Open <em>Styles</em> → pick a drawing style (e.g., <em>Types (Unique symbols)</em>).</li>
+            <li>Tune the color, size, and legend for clarity.</li>
+          </ol>
+        </article>
+
+        <article class="card">
+          <h3>3) Pull in data from elsewhere</h3>
+          <p>Add CSV/GeoJSON/Feature layers via URL or by uploading. For open data, look for services that expose a <em>Feature Service</em> URL so updates flow through to your map.</p>
+        </article>
+
+        <article class="card">
+          <h3>Example: “Pokémon GO” map with an OpenStreetMap basemap</h3>
+          <p>Use OSM as the basemap and overlay your own points (e.g., PokéStops) for a clean, legible look.</p>
+          <figure>
+            <img src="https://itoolab.com/wp-content/uploads/pokemongo-blank-map.webp" alt="Pokémon GO-style blank map view over an OpenStreetMap basemap" />
+            <figcaption>OpenStreetMap basemap—great for neutral context while you focus on your own layers.</figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <!-- Day 2 -->
+    <section id="day2">
+      <h2>Day 2: Feature Layers, Points & Polygons, Attribute Tables</h2>
+      <p class="lead">Create and manage feature layers, work with attribute tables, and practice safe editing workflows.</p>
+
+      <div class="grid cols-2">
+        <article class="card">
+          <h3>1) Build a feature layer</h3>
+          <ol>
+            <li>From <em>Content</em> → <em>New item</em> → <em>Feature layer</em>.</li>
+            <li>Pick geometry type: <strong>points</strong>, <strong>lines</strong>, or <strong>polygons</strong>.</li>
+            <li>Define fields you need (text, number, date, etc.).</li>
+          </ol>
+        </article>
+
+        <article class="card">
+          <h3>2) Edit the attribute table</h3>
+          <ol>
+            <li>Open the layer → <em>Data</em> tab.</li>
+            <li>Add/edit fields, set domains (coded lists), and calculate values.</li>
+            <li>Use <em>Editor</em> to add or modify features with proper tracking.</li>
+          </ol>
+        </article>
+
+        <article class="card">
+          <h3>3) Points vs. polygons</h3>
+          <p>Use <strong>points</strong> for discrete locations (addresses, facilities) and <strong>polygons</strong> for areas (parcels, districts). Pick the geometry that best represents the question you’re answering.</p>
+        </article>
+
+        <article class="card">
+          <h3>Reference: LLBO DRM</h3>
+          <p>The LLBO DRM is a great resource to see <em>how a layer is used to communicate data</em>. Explore symbology, pop-ups, and metadata in existing items to guide your own designs.</p>
+          <p><a href="https://maps.arcgis.com/home/search.html?restrict=false&sortField=relevance&sortOrder=desc&searchTerm=owner%3A%22LLBODRMGIS%22#content" target="_blank" rel="noopener">Browse examples →</a></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Day 3 -->
+    <section id="day3">
+      <h2>Day 3: Story Maps—Maps With Narrative</h2>
+      <p class="lead">Combine maps, images, and text into a compelling story. Great for reports, grant applications, and public engagement.</p>
+
+      <div class="grid cols-2">
+        <article class="card">
+          <h3>1) Create a Story Map</h3>
+          <ol>
+            <li>From <em>Content</em> → <em>New item</em> → <em>StoryMap</em>.</li>
+            <li>Pick a <em>Theme</em> that matches your brand.</li>
+            <li>Add <em>Map</em> blocks and connect to your web maps.</li>
+          </ol>
+        </article>
+
+        <article class="card">
+          <h3>2) Pull in images & media</h3>
+          <p>Use <em>Image</em> or <em>Gallery</em> blocks to add photos and diagrams. Credit your sources and add alt text for accessibility.</p>
+        </article>
+
+        <article class="card">
+          <h3>3) Complement maps with narrative</h3>
+          <p>Lead with a clear headline, keep paragraphs short, and use callouts to explain what the reader should notice on the map. Link back to data sources and the LLBO DRM where appropriate.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Workshop · Built for training and reference
+  </footer>
+
+  <script>
+    // Flip this to true to reveal Day 2 & Day 3
+    const ADVANCED_UNLOCKED = false;
+
+    // Optional: ?unlock=1 in the URL also unlocks (handy for quick demos)
+    const params = new URLSearchParams(location.search);
+    const unlocked = ADVANCED_UNLOCKED || params.get('unlock') === '1';
+
+    function setAdvancedVisibility(show) {
+      ['day2', 'day3'].forEach(id => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.classList.toggle('locked', !show);
+        if (!show) el.setAttribute('aria-hidden', 'true');
+        else el.removeAttribute('aria-hidden');
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => setAdvancedVisibility(unlocked));
+    // helpers for dev:
+    window.revealAdvanced = () => setAdvancedVisibility(true);
+    window.hideAdvanced   = () => setAdvancedVisibility(false);
+  </script>
+</body>
+</html>
