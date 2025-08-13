@@ -272,28 +272,34 @@
     © 2025 Workshop · Built for training and reference
   </footer>
 
-  <script>
-    // Flip this to true to reveal Day 2 & Day 3
-    const ADVANCED_UNLOCKED = false;
+<script>
+  // Set individually
+  const UNLOCK_DAY2 = true;   // <- flip this to show Day 2
+  const UNLOCK_DAY3 = false;  // <- keep Day 3 blurred
 
-    // Optional: ?unlock=1 in the URL also unlocks (handy for quick demos)
-    const params = new URLSearchParams(location.search);
-    const unlocked = ADVANCED_UNLOCKED || params.get('unlock') === '1';
+  const params = new URLSearchParams(location.search);
+  const day2Unlocked = UNLOCK_DAY2 || params.get('unlock_day2') === '1' || params.get('unlock') === '1';
+  const day3Unlocked = UNLOCK_DAY3 || params.get('unlock_day3') === '1' || params.get('unlock') === '1';
 
-    function setAdvancedVisibility(show) {
-      ['day2', 'day3'].forEach(id => {
-        const el = document.getElementById(id);
-        if (!el) return;
-        el.classList.toggle('locked', !show);
-        if (!show) el.setAttribute('aria-hidden', 'true');
-        else el.removeAttribute('aria-hidden');
-      });
-    }
+  function setVisibility(id, show) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.toggle('locked', !show);
+    if (!show) el.setAttribute('aria-hidden', 'true');
+    else el.removeAttribute('aria-hidden');
+  }
 
-    document.addEventListener('DOMContentLoaded', () => setAdvancedVisibility(unlocked));
-    // helpers for dev:
-    window.revealAdvanced = () => setAdvancedVisibility(true);
-    window.hideAdvanced   = () => setAdvancedVisibility(false);
-  </script>
+  document.addEventListener('DOMContentLoaded', () => {
+    setVisibility('day2', day2Unlocked);
+    setVisibility('day3', day3Unlocked);
+  });
+
+  // optional helpers
+  window.revealDay2 = () => setVisibility('day2', true);
+  window.hideDay2   = () => setVisibility('day2', false);
+  window.revealDay3 = () => setVisibility('day3', true);
+  window.hideDay3   = () => setVisibility('day3', false);
+</script>
+
 </body>
 </html>
