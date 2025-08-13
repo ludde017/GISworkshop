@@ -173,7 +173,7 @@
       <p>The popular mobile app game pokemon go uses OpenStreetMap data for it's main map</p>
       <figure>
         <img src="https://itoolab.com/wp-content/uploads/pokemongo-blank-map.webp" alt="Pokémon GO-style blank map view over an OpenStreetMap basemap" />
-        <figcaption>OpenStreetMap is an example of a community collobaration being used to map the world</figcaption>
+        <figcaption>OpenStreetMap is an example of a community collaboration being used to map the world</figcaption>
       </figure>
     </article>
 
@@ -196,34 +196,47 @@
       <p class="lead">Create and manage feature layers, work with attribute tables, and practice safe editing workflows.</p>
 
       <div class="grid cols-2">
-        <article class="card">
-          <h3>1) Build a feature layer</h3>
-          <ol>
-            <li>From <em>Content</em> → <em>New item</em> → <em>Feature layer</em>.</li>
-            <li>Pick geometry type: <strong>points</strong>, <strong>lines</strong>, or <strong>polygons</strong>.</li>
-            <li>Define fields you need (text, number, date, etc.).</li>
-          </ol>
-        </article>
+      <article class="card">
+      <h3>1) Create a point feature layer</h3>
+      <ol>
+        <li>In ArcGIS Online, click <em>Content</em> -> <em> New Item </em> -> <em> Feature Layer</em></li>
+        <li>Choose <em>Define your own layer</em> → <strong>MultiPoint Layer </strong>.</li>
+        <li>Name and save your layer.</li>li
+        <li>Now you can edit the layer by opening it's map and clicking <strong>show table </strong> on the layer.</li>
 
-        <article class="card">
-          <h3>2) Edit the attribute table</h3>
-          <ol>
-            <li>Open the layer → <em>Data</em> tab.</li>
-            <li>Add/edit fields, set domains (coded lists), and calculate values.</li>
-            <li>Use <em>Editor</em> to add or modify features with proper tracking.</li>
-          </ol>
-        </article>
+      </ol>
+    </article>
+    <article class="card">
+      <h3>2) Due heat map anaylsis</h3>
+      <ol>
+        <li>In properties of your layer click -> show properties -> styles</li>li
+        <li>Click <strong>heat map</strong> </li>
 
-        <article class="card">
-          <h3>3) Points vs. polygons</h3>
-          <p>Use <strong>points</strong> for discrete locations (addresses, facilities) and <strong>polygons</strong> for areas (parcels, districts). Pick the geometry that best represents the question you’re answering.</p>
-        </article>
+      </ol>
+    </article>
+    <article class="card">
+      <h3>3) Create a polygon feature layer</h3>
+      <ol>
+        <li>In ArcGIS Online, click <em>Content</em> -> <em> New Item </em> -> <em> Feature Layer</em></li>
+        <li>Choose <em>Define your own layer</em> → <strong>Polygon Layer </strong>.</li>
+        <li>Name and save your layer.</li>li
+        <li>Now you can edit the layer by opening it's map and clicking <strong>show table </strong> on the layer.</li>
 
-        <article class="card">
-          <h3>Reference: LLBO DRM</h3>
-          <p>The LLBO DRM is a great resource to see <em>how a layer is used to communicate data</em>. Explore symbology, pop-ups, and metadata in existing items to guide your own designs.</p>
-          <p><a href="https://maps.arcgis.com/home/search.html?restrict=false&sortField=relevance&sortOrder=desc&searchTerm=owner%3A%22LLBODRMGIS%22#content" target="_blank" rel="noopener">Browse examples →</a></p>
+      </ol>
         </article>
+     <article class="card">
+     <h3>4) Clip the data from the polygon</h3>
+      <ol>
+        <li>In ArcGIS Online, click <em>Map</em></li>
+        <li>Pull in your desired layers</li>
+        <li>Go to the analysis section</li>li
+        <li>Click Analysis → Tools → Manage data → Overlay Layers </li>
+        <li> Input features = the layer to cut. Overlay features = polygon. Overlay type = Intersect</li>
+        <li> Enviornment settings -> processing extent -> display or layer(select our polygon) </li>
+
+      </ol>
+    
+    </article>
       </div>
     </section>
 
